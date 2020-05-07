@@ -13,9 +13,9 @@ NBitcoin is the .NET Bitcoin library, it is open-source and maintained by Nicola
 This library should always be included if you do anything Bitcoin related in C#.  
 NBitcoin supports cross-platform applications.  
 
-### ## # How to debug into NBitcoin source code (optional)  
+## How to debug into NBitcoin source code (optional)  
 
-NBitcoin lets you debug into its code to make your life easier. For this feature to work make sure you have source server support enabled in Visual Studio (Tools/Options).   
+NBitcoin lets you debug into its code to make your life easier. For this feature to work make sure you have source server support enabled in Visual Studio (Tools/Options -> Debugging/General -> Enable source server support).   
 ![](../assets/visualstudio_enablesourceserversupport.png)  
 
 Now, if you step into NBitcoin's code, the source code will be automatically fetched from GitHub, and appear in the Visual Studio Debugger.  

@@ -2,7 +2,7 @@
 > [[2016.05.02](https://www.youtube.com/watch?v=dZNtbAFnr-0)] My name is Craig Wright and I am about to demonstrate a signing of a message with the public key that is associated with the first transaction ever done in Bitcoin.  
 
 ```cs
-var bitcoinPrivateKey = new BitcoinSecret("XXXXXXXXXXXXXXXXXXXXXXXXXX");
+var bitcoinPrivateKey = new BitcoinSecret("XXXXXXXXXXXXXXXXXXXXXXXXXX", Network.Main);
 
 var message = "I am Craig Wright";
 string signature = bitcoinPrivateKey.PrivateKey.SignMessage(message);
@@ -20,7 +20,7 @@ Let's quickly find on the [Internet](https://en.bitcoin.it/wiki/Genesis_block) t
 var message = "I am Craig Wright";
 var signature = "IN5v9+3HGW1q71OqQ1boSZTm0/DCiMpI8E4JB1nD67TCbIVMRk/e3KrTT9GvOuu3NGN0w8R2lWOV2cxnBp+Of8c=";
 
-var address = new BitcoinPubKeyAddress("1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa");
+var address = new BitcoinPubKeyAddress("1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa", Network.Main);
 bool isCraigWrightSatoshi = address.VerifyMessage(message, signature);
 
 Console.WriteLine("Is Craig Wright Satoshi? " + isCraigWrightSatoshi);

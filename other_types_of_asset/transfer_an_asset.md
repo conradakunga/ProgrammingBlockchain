@@ -37,7 +37,7 @@ The asset transfer is actually very easy with the **TransactionBuilder**.
 
 ```cs
 var book = BitcoinAddress.Create("1KF8kUVHK42XzgcmJF4Lxz4wcL5WDL97PB");
-var nicoSecret = new BitcoinSecret("??????????");
+var nicoSecret = new BitcoinSecret("??????????", Network.Mainnet);
 var nico = nicoSecret.GetAddress(); //15sYbVpRh6dyWycZMwPdxJWD4xbfxReeHe
 
 var forFees = new Coin(
@@ -46,7 +46,7 @@ var forFees = new Coin(
     amount: Money.Satoshis(4425000),
     scriptPubKey: new Script(Encoders.Hex.DecodeData("76a914356facdac5f5bcae995d13e667bb5864fd1e7d5988ac")));
 
-TransactionBuilder builder = new TransactionBuilder();
+var builder = Network.Main.CreateTransactionBuilder();
 var tx = builder
     .AddKeys(nicoSecret)
     .AddCoins(colored, forFees)
